@@ -1,0 +1,207 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --glass-bg: rgba(0, 0, 0, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  background: url("Images/ML.jpg") center / cover fixed no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HERO (HEADER) */
+.hero {
+  position: relative;
+  min-height: 80px;
+  background: transparent;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white);
+}
+
+/* MENIU */
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--white);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* FORM BLOKAS */
+.form-block {
+  max-width: 480px;
+  margin: 4rem auto 6rem auto;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 2rem 2.5rem;
+  text-align: center;
+}
+
+.form-block h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--white);
+  background: rgba(255 255 255 / 0.1);
+  color: var(--white);
+}
+
+.btn {
+  background-color: var(--white);
+  color: var(--black);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #eee;
+}
+
+/* SUCCESS MESSAGE */
+.success {
+  color: #b6ffb6;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  padding: 1.25rem 1rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--white);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+
+.social-icons img:hover {
+  opacity: 0.8;
+}
+
+/* RESPONSYVUMAS */
+@media (max-width: 600px) {
+  .form-block {
+    margin: 2rem 1rem 4rem 1rem;
+    max-width: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

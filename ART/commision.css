@@ -1,0 +1,190 @@
+/* === KINTAMIEJI === */
+:root {
+    --black: #000;
+    --white: #fff;
+    --glass-bg: rgba(0, 0, 0, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* === RESET === */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+    color: var(--white);
+    background: url("Images/BLACKK.webp") center / cover fixed no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* === HEADER (Hero) === */
+  .hero {
+    position: relative;
+    background: transparent;
+    padding: 1.5rem 2rem;
+  }
+  
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--white);
+  }
+  
+  /* === NAVIGACIJA === */
+  .menu {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--white);
+    transition: width 0.3s ease;
+  }
+  
+  .menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* === MAIN COMMISSION === */
+  .commission-wrapper {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  
+  .commission-wrapper h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* === GLASS BOX === */
+  .glass-box {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .glass-box h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .glass-box p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  
+  .glass-box a {
+    color: #b3e5fc;
+    text-decoration: underline;
+  }
+  
+  /* === FOOTER === */
+  footer {
+    background: var(--black);
+    padding: 2rem 1rem;
+    margin-top: auto;
+  }
+  
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--white);
+  }
+  
+  .footer-text {
+    flex: 1 1 200px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icons img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icons img:hover {
+    opacity: 0.8;
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 600px) {
+    .menu {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .hero-inner {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .commission-wrapper h1 {
+      font-size: 2rem;
+    }
+  
+    .glass-box {
+      padding: 1.5rem;
+    }
+  }
+  

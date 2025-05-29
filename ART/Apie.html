@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menininko galerija • Apie mane</title>
+  <link rel="icon" type="image/png" href="Images/favicon.ico"/>
+  <link rel="stylesheet" href="Apie.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <a href="index.html">
+        <img src="Images/LOG0.png" alt="Logo" class="logo"/>
+      </a>
+      <nav class="menu">
+        <a href="Apie.html">Apie&nbsp;mane</a>
+        <a href="commision.html">Užsakymai</a>
+        <a href="Galerija.html">Galerija</a>
+        <a href="Forma.html">Gauk&nbsp;savo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="profile-block" id="apieSekcija">
+      <img src="Images/Dk.jpg" alt="Artist portrait" class="profile-img"/>
+      <h1>Mauglis Tarzanavičius</h1>
+      <br>
+      <p>Dar žinomas kaip Tarzanas</p>
+      <br>
+      <p>
+        Esu menininkas be pieštuko, vizionierius be vizijų, genijus be įrodymų.
+      </p>
+      <br>
+
+      <!-- Text to Speech -->
+      <button onclick="skaitytiTekstą()">🔊 Perskaityk tekstą</button>
+
+      <br><br>
+
+      <button id="sayHelloBtn">Skaityti toliau...</button>
+      <p id="message"></p>
+
+      <br>
+
+      <button id="toggleMessage">Jei dar žinių trūkumas...</button>
+      <p id="jqMessage" style="display:none;">Mokesčių nedeklaruoju.</p>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="Images/LOG0.png" alt="Logo" class="footer-logo" />
+      <p class="footer-text">© 2025 Menininko galerija  •  Visos teisės saugomos</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/"><img src="Images/Insta.avif" alt="Instagram" /></a>
+        <a href="https://www.Facebook.com/"><img src="Images/FB.png" alt="Facebook" /></a>
+        <a href="https://www.Youtube.com/"><img src="Images/YT.webp" alt="YouTube" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTŲ BLOKAS -->
+  <script>
+    // Mygtukas „Skaityti toliau...“
+    document.getElementById("sayHelloBtn").onclick = function() {
+      document.getElementById("message").textContent = "Mano kurybos principas: Jei nieko nepieši - nieko nesugadinsi";
+    };
+
+    // jQuery mygtukas
+    $(document).ready(function() {
+      $("#toggleMessage").click(function() {
+        $("#jqMessage").fadeToggle();
+      });
+    });
+
+    // Text to Speech funkcija
+    function skaitytiTekstą() {
+      const tekstas = document.getElementById("apieSekcija").innerText;
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(tekstas);
+      utter.lang = 'lt-LT'; // Lietuvių kalba
+      synth.speak(utter);
+    }
+  </script>
+
+</body>
+</html>
+

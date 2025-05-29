@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Užsakyk savo kūrinį | Menininko galerija</title>
+  <link rel="stylesheet" href="Forma.css" />
+  <link rel="icon" type="image/png" href="Images/favicon.ico"/>
+</head>
+<body>
+
+  <script src="formValidation.js"></script>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <a href="index.html">
+        <img src="Images/LOG0.png" alt="Logo" class="logo"/>
+      </a>
+      <nav class="menu">
+        <a href="Apie.html">Apie&nbsp;mane</a>
+        <a href="commision.html">Užsakymai</a>
+        <a href="Galerija.html">Galerija</a>
+        <a href="Forma.html">Gauk&nbsp;savo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-block">
+      <h1>Užsakyk savo kūrinį</h1>
+      <form id="commissionForm" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
+        <div class="field">
+          <label for="firstName">Vardas</label>
+          <input type="text" id="firstName" name="firstName" required />
+        </div>
+
+        <div class="field">
+          <label for="lastName">Pavardė</label>
+          <input type="text" id="lastName" name="lastName" required />
+        </div>
+
+        <div class="field">
+          <label for="phone">Telefono numeris</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="^\+?[0-9\s\-]{8,15}$"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="email">El. paštas</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="field">
+          <label for="message">Aprašymas</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Apibūdinkite, kokio darbo norėtumėte…"
+            required
+          ></textarea>
+        </div>
+        <br>
+
+        <button type="submit" class="btn">Siųsti</button>
+
+        <p class="success" id="successMessage" style="display:none;">
+          Ačiū! Menininkas su jumis susisieks artimiausiu metu.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="Images/LOG0.png" alt="Logo" class="footer-logo" />
+      <p class="footer-text">© 2025 Menininko galerija  •  Visos teisės saugomos</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/"><img src="Images/Insta.avif" alt="Instagram" /></a>
+        <a href="https://www.Facebook.com/"><img src="Images/FB.png" alt="Facebook" /></a>
+        <a href="https://www.Youtube.com/"><img src="Images/YT.webp" alt="YouTube" /></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

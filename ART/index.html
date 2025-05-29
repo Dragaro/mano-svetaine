@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="path-to-css/silktide-consent-manager.css">
+<script src="path-to-js/silktide-consent-manager.js"></script>
+<script>
+silktideCookieBannerManager.updateCookieBannerConfig({
+  background: {
+    showBackground: true
+  },
+  cookieIcon: {
+    position: "bottomRight"
+  },
+  cookieTypes: [
+    {
+      id: "necessary",
+      name: "Necessary",
+      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Necessary here');
+      }
+    },
+    {
+      id: "analytics",
+      name: "Analytical",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      defaultValue: true,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        });
+        dataLayer.push({
+          'event': 'consent_accepted_analytics',
+        });
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+        });
+      }
+    },
+    {
+      id: "advertising",
+      name: "Advertising",
+      description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+      onAccept: function() {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+        });
+        dataLayer.push({
+          'event': 'consent_accepted_advertising',
+        });
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+        });
+      }
+    }
+  ],
+  text: {
+    banner: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+      creditLinkText: "Get this banner for free",
+      creditLinkAccessibleLabel: "Get this banner for free"
+    }
+  }
+});
+</script>
+
+  <title>Menininko galerija • Pradžia</title>
+  
+  <meta name="description" content="Menininko galerija – unikalūs kūriniai, galerija, užsakymai ir menininko profilis. Atrask kūrybą, kuri kalba spalvomis." />
+  
+  <meta name="keywords" content="menas, galerija, menininko darbai, užsakymai, kūryba, paveikslai, menininkas, Lietuva" />
+  
+  <meta name="author" content="Mauglis Tarzanavičius" />
+  
+  <link rel="canonical" href="https://tavosvetaine.lt/Main.html" />
+  
+  <link rel="icon" type="image/png" href="Images/favicon.ico" />
+  
+  <link rel="alternate" hreflang="lt" href="https://tavosvetaine.lt/Main.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menininko galerija • Pradžia</title>
+  <link rel="icon" type="image/png" href="Images/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Main.css" />
+    <link rel="stylesheet" href="cookie.css" />
+</head>
+<body>
+  <!-- HERO HEADER -->
+  <header class="hero">
+    <div class="hero-inner">
+
+      <a href="index.html">
+        <img src="Images/LOG0.png" alt="Logo" class="logo"/>
+      </a>
+      <nav class="menu">
+        <a href="Apie.html">Apie&nbsp;mane</a>
+        <a href="commision.html">Užsakymai</a>
+        <a href="Galerija.html">Galerija</a>
+        <a href="Forma.html">Gauk&nbsp;savo</a>
+      </nav>
+    </div>
+
+    <!-- Hero teksto sluoksnis -->
+    <div class="hero-overlay">
+      <h1>Kūryba, kuri kalba spalvomis</h1>
+    </div>
+  </header>
+
+  <main>
+    <!-- PROFILIS -->
+    <section class="profile">
+      <img src="Images/Dk.jpg" alt="Artist portrait" class="profile-img" />
+      <div class="profile-text">
+        <h2>Mauglis Tarzanavičius</h2>
+        <p>
+          Neseniai paleistas meninikas iš Čiurlionio 12-tos.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALERIJA (stiklinis blokas) -->
+    <section class="gallery-wrapper">
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 1" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 2" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 3" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 4" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 5" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 6" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/Stock.jpg" alt="Art 6" />
+        <figcaption>
+          <h3>Nėra pavadinimo</h3>
+          <p>Nėra aprašo</p>
+        </figcaption>
+      </figure>
+
+      <figure class="art-card">
+        <img src="Images/DKS.jpg" alt="Art 6" />
+        <figcaption>
+          <h3>"HAHAHA"</h3>
+          <p>?</p>
+        </figcaption>
+      </figure>
+    </section>
+
+ <!-- NAUJA FEATURE -->
+ <section class="feature-wrapper">
+  <div class="feature-inner">
+    <div class="feature-text">
+      <h2>Geriausias&nbsp;darbas:</h2>
+      <p>
+        Nėra
+      </p>
+    </div>
+
+    <div class="feature-img">
+      <img src="Images/Stock.jpg" alt="Featured artwork" />
+    </div>
+  </div>
+</section>
+
+    <!-- ATSILIEPIMAI -->
+    <section class="comments">
+      <div class="comment">
+        <img
+          src="Images/Stock.jpg"
+          alt="Vartotojo nuotrauka"
+          class="comment-img"
+        />
+        <div class="comment-content">
+          <p class="comment-name">Markas Aurelijus</p>
+          <p class="comment-text">
+            Užsisakiau darbą. Menininkas sureagavo greitai. Pinigus pasiėmė, darbo negavau. 
+          </p>
+          <div class="comment-stars">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="cookie.js"></script>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src="Images/LOG0.png" alt="Logo" class="footer-logo" />
+
+      <p class="footer-text">
+        © 2025 Menininko galerija  •  Visos teisės saugomos
+      </p>
+
+      <div class="social-icons">
+        <a href="https://www.instagram.com/"><img src="Images/Insta.avif" alt="Instagram" /></a>
+        <a href="https://www.Facebook.com/"><img src="Images/FB.png" alt="Facebook" /></a>
+        <a href="https://www.Youtube.com/"><img src="Images/YT.webp" alt="YouTube" /></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
