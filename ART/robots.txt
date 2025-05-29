@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dragaro.github.io/mano-svetaine/sitemap.xml
+Sitemap: https://dragaro.github.io/mano-svetaine/ART/sitemap.xml
